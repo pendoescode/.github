@@ -1,0 +1,29 @@
+tasks:
+    - name: Start development environment
+      init: pnpm install
+      command: pnpm run dev
+
+ports:
+    - port: 3000
+      onOpen: open-browser
+      visibility: public
+      description: website preview
+
+vscode:
+    extensions:
+        - EditorConfig.EditorConfig
+        - usernamehw.errorlens
+        - eamodio.gitlens
+        - esbenp.prettier-vscode
+        - yoavbls.pretty-ts-errors
+        - shardulm94.trailing-spaces
+
+github:
+  prebuilds:
+    master: true
+    branches: true
+    pullRequests: true
+    pullRequestsFromForks: true
+    addCheck: prevent-merge-on-error
+    addComment: false
+    addBadge: true
